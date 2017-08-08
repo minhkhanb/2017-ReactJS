@@ -1,21 +1,24 @@
-import React from 'react'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+import {createStore} from 'redux';
+import {Provider} from 'react-redux';
+import totoApp from './reducers/reducers';
 
-import { render } from 'react-dom'
-import { createStore } from 'redux'
-import { Provider } from 'react-redux'
+let store = createStore(totoApp);
 
-import App from './App'
-import todoApp from './reducers/reducers'
-
-let store = createStore(todoApp)
-
-let rootElement = document.getElementById('app')
-
-render(
-
-    <Provider store = {store}>
-        <App />
-    </Provider>,
-
-    rootElement
-)
+ReactDOM.render(
+    (
+        <Provider store={store}>
+            <App />
+        </Provider>
+        /*<Router history={browserHistory}>
+            <Route path="/" component={App}>
+            <IndexRoute component={Home}/>
+            <Route path="home" component={Home}/>
+            <Route path="about" component={About}/>
+            <Route path="contact" component={Contact}/>
+            </Route>
+        </Router>*/
+    ), document.querySelector('#app')
+);

@@ -1,33 +1,17 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { addTodo } from './actions/actions'
+import React from 'react';
+import  Home from './components/Home';
 
-import AddTodo from './components/AddTodo'
-import TodoList from './components/TodoList'
+class App extends React.Component {
+    constructor() {
+        super();
 
-class App extends Component {
+    }
+
     render() {
-        const { dispatch, visibleTodos } = this.props
-
         return (
-            <div>
-
-                <AddTodo
-                    onAddClick = {text =>
-               dispatch(addTodo(text))}
-                />
-
-                <TodoList todos = {visibleTodos}/>
-
-            </div>
-        )
+            <Home/>
+        );
     }
 }
 
-function select(state) {
-    return {
-        visibleTodos: state.todos
-    }
-}
-
-export default connect(select)(App)
+export default App;
