@@ -6,7 +6,7 @@ var app = express();
 
 var COMMENTS_FILE = path.join(__dirname, 'comments.json');
 
-app.set('port', (process.env.PORT || 3000));
+app.set('port', (process.env.PORT || 9000));
 
 app.use('/', express.static(path.join(__dirname, 'app')));
 app.use(bodyParser.json());
