@@ -500,7 +500,7 @@
 
 /*********************************/
 #swagger-editor #ace-editor {
-    height: calc(100vh - 46px)!important;
+
     width: 100%;
     font-size: 14px;
 }
@@ -512,7 +512,7 @@
     overflow: hidden;
     user-select: text;
     flex-direction: row;
-    height: 100%;
+    height: calc(100vh - 52px)!important;
     left: 0px;
     right: 0px;
 }
@@ -545,6 +545,9 @@
     bottom: 0;
     top: 0;
     position: absolute;
+}
+.Pane2 {
+    overflow-y: scroll;
 }
 /*********************topbar************************/
 #swagger-editor .topbar {
